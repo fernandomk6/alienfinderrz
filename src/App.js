@@ -1,4 +1,6 @@
 const App = () => {
+  // api doc
+  // https://javascript.rickandmortyapi.com/index.html
   return (
     <div>
       <h1>Alien Finderrz</h1>
