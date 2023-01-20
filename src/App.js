@@ -5,7 +5,9 @@ import Header from './components/Header'
 // api doc
 // https://javascript.rickandmortyapi.com/index.html
 
-// - Estilizar!!!
+// - Isolar componentes
+// - Exibir nome dos episodios
+// - Finalizar estilos
 
 const App = () => {
   const [caracterName, setCaracterName] = useState('')
