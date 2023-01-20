@@ -53,6 +53,11 @@ section div {
   margin: 10px;
   width: calc(25% - 20px);
   border: 1px solid var(--orange);
+  cursor: pointer;
+}
+
+.caracteres-list li:hover {
+  outline: 2px solid green;
 }
 
 .caracteres-list li img {
