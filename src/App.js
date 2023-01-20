@@ -4,11 +4,12 @@ import { getCharacters } from "rickmortyapi"
 // api doc
 // https://javascript.rickandmortyapi.com/index.html
 
-// - Desenvolver a lógica de paginação
+// - Estilizar!!!
 
 const App = () => {
-  const [caracterName, setCaracterName] = useState('rick')
+  const [caracterName, setCaracterName] = useState('')
   const [caracters, setCaracters] = useState([])
+  const [caracter, setCaracter] = useState(null)
   const [info, setInfo] = useState({})
   const [fetching, setFetching] = useState(false)
   const [actualPage, setActualPage] = useState(1) 
@@ -84,14 +85,27 @@ const App = () => {
 
     setFetching(false)
   }
+
+  const showCaracter = (caracter) => {
+    setCaracter({...caracter})
+  }
+
+  const clearCaracter = () => {
+    setCaracter(null)
+  }
+
   return (
     <div>
-      <h1>Alien Finderrz</h1>
+      <header>
+        <h1>Alien Finderrz</h1>
+      </header>
       
-      <div>
+      <section>
         <div>
           <form onSubmit={handleSubmit}>
             <input 
+              className='search-input'
+              placeholder='Search'
               value={caracterName} 
               onChange={handleCaracterNameChange} 
               disabled={fetching}
@@ -99,24 +113,40 @@ const App = () => {
             />
           </form>
         </div>
-      </div>
-
-      {Boolean(caracters.length) && (
+      </section>
+      
+      {Boolean(caracter) && (
         <div>
+          <span>{caracter.name}</span>
+          <button onClick={clearCaracter}>Voltar</button>
+        </div>
+
+      )}
+ 
+
+      {Boolean(caracters.length && !caracter) && (
+        <section>
           {console.log(info)}
           {console.log(caracters)}
           <div>
             <h2>{info.count} resultados</h2>
-            <ul>
+            <ul className='caracteres-list'>
               {caracters.map((caracter) => (
-                <li key={caracter.id}>{caracter.name}</li>
+                <li key={caracter.id} onClick={() => showCaracter(caracter)}>
+                  <img src={caracter.image} alt={caracter.name}></img>
+                  <span>{caracter.name}</span>
+                </li>
               ))}
             </ul>
-            <span>Pagina: {actualPage} de {info.pages}</span>
-            <button onClick={handlePrevPage} disabled={!info.prev}>Página anterior</button>
-            <button onClick={handleNextPage} disabled={!info.next}>Proxíma página</button>
+            <div className='pages'>
+              <span>Pagina: {actualPage} de {info.pages}</span>
+              <div>
+                <button onClick={handlePrevPage} disabled={!info.prev}>Anterior</button>
+                <button onClick={handleNextPage} disabled={!info.next}>Proxímo</button>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       )}
 
     </div>

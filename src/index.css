@@ -1,5 +1,74 @@
+:root {
+  --total-black: #000;
+  --semi-black: #111;
+  --total-white: #fff;
+  --semi-white: #666;
+  --orange: orange;
+}
+
 body {
-  background-color: black;
-  color: orange;
+  background-color: var(--total-black);
+  color: var(--orange);
   font-family: 'Kanit', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section {
+  margin: 20px 0;
+  background-color: var(--semi-black);
+  padding: 10px;
+}
+
+section div {
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.search-input {
+  background-color: var(--total-black);
+  appearance: none;
+  color: var(--orange);
+  border: none;
+  font-size: 2rem;
+  width: 100%;
+  padding: 10px;
+  outline: 1px solid var(--orange);
+}
+
+.search-input::placeholder {
+  color: var(--semi-white);
+}
+
+.caracteres-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.caracteres-list li {
+  box-sizing: border-box;
+  margin: 10px;
+  width: calc(25% - 20px);
+  border: 1px solid var(--orange);
+}
+
+.caracteres-list li img {
+  width: 100%;
+}
+
+.caracteres-list li span {
+  display: block;
+  padding: 10px;
+}
+
+.pages div button {
+  padding: 10px;
+  appearance: none;
+  background-color: var(--total-black);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  margin: 0 5px;
 }
