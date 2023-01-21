@@ -1,0 +1,86 @@
+.page-actions {
+  text-align: center;
+}
+
+.page-buttons {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.page-button {
+  appearance: none;
+  background-color: var(--total-black);
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  padding: 10px 20px;
+}
+
+.page-button:not(.page-button:disabled) {
+  cursor: pointer;
+}
+
+.page-button:focus:not(.page-button:disabled),
+.page-button:hover:not(.page-button:disabled) {
+  outline: 4px solid green;
+}
+
+.page-button:disabled {
+  background-color: var(--semi-black);
+  border: 1px solid var(--semi-white);
+  color: var(--semi-white);
+}
+
+.caracter-card:focus:not(.caracter-card:disabled),
+.caracter-card:hover:not(.caracter-card:disabled) {
+  outline: 4px solid green;
+}
+
+.caracter-card {
+  background-color: var(--total-black);
+}
+
+.caracter-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.caracter-list li {
+  box-sizing: border-box;
+  margin: 10px;
+  width: calc(25% - 20px);
+  border: 1px solid var(--orange);
+  cursor: pointer;
+}
+
+.caracter-list li img {
+  width: 100%;
+}
+
+.caracter-list li span {
+  display: block;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .caracter-list li {
+    box-sizing: border-box;
+    margin: 10px;
+    width: calc(50% - 20px);
+    border: 1px solid var(--orange);
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .caracter-list li {
+    box-sizing: border-box;
+    margin: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid var(--orange);
+    cursor: pointer;
+  }
+}
+

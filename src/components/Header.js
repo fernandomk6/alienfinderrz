@@ -1,7 +1,9 @@
+import styles from './Header.module.css'
+
 const Header = () => {
   return (
     <header>
-      <h1>Alien Finderrz</h1>
+      <h1 className={styles.title}>Alien Finderrz</h1>
     </header>
   )
 }

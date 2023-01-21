@@ -4,11 +4,12 @@ import styles from './CaracterSearch.module.css'
 import Section from './Section'
 import SectionContent from './SectionContent'
 
-const CaracterSearch = ({ fetching, setFetching, setCaracters, setInfo, caracterName, setCaracterName }) => {
+const CaracterSearch = ({ fetching, setFetching, setCaracters, setInfo, caracterName, setCaracterName, setErrorMessage }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setFetching(true)
+    setErrorMessage('')
 
     try {
       const reponse = await getCharacters({ name: caracterName })
@@ -22,6 +23,7 @@ const CaracterSearch = ({ fetching, setFetching, setCaracters, setInfo, caracter
       setCaracters(caractersCopy)
       setInfo(infoCopy)
     } catch (error) {
+      setErrorMessage(error.message)
       console.log(error)
     }
 

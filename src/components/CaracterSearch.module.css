@@ -7,8 +7,14 @@
   width: 100%;
   padding: 10px;
   outline: 1px solid var(--orange);
+  box-sizing: border-box;
 }
 
 .search-input::placeholder {
   color: var(--semi-white);
+}
+
+.search-input:focus,
+.search-input:hover {
+  outline: 4px solid green;
 }

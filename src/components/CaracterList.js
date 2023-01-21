@@ -4,10 +4,10 @@ import { getCharacters } from 'rickmortyapi'
 import Section from "./Section"
 import SectionContent from "./SectionContent"
 
+import styles from './CaracterList.module.css'
+
 const CaracterList = ({ info, setInfo, caracters, setCaracters, setCaracter, caracterName }) => {
   const [actualPage, setActualPage] = useState(1) 
-
-  console.log(caracterName)
 
   const handlePrevPage = async () => {
     const prevPage = actualPage - 1
@@ -54,19 +54,19 @@ const CaracterList = ({ info, setInfo, caracters, setCaracters, setCaracter, car
     <Section>
       <SectionContent>
         <h2>{info.count} resultados</h2>
-        <ul className='caracteres-list'>
+        <ul className={styles['caracter-list']}>
           {caracters.map((caracter) => (
-            <li key={caracter.id} onClick={() => setCaracter({...caracter})}>
+            <li key={caracter.id} onClick={() => setCaracter({...caracter})} tabIndex='0' className={styles['caracter-card']}>
               <img src={caracter.image} alt={caracter.name}></img>
               <span>{caracter.name}</span>
             </li>
           ))}
         </ul>
-        <div className='pages'>
-          <span>Pagina: {actualPage} de {info.pages}</span>
-          <div>
-            <button onClick={handlePrevPage} disabled={!info.prev}>Anterior</button>
-            <button onClick={handleNextPage} disabled={!info.next}>Proxímo</button>
+        <div className={styles['page-actions']}>
+          <span>Página: {actualPage} de {info.pages}</span>
+          <div className={styles['page-buttons']}>
+            <button className={styles['page-button']} onClick={handlePrevPage} disabled={!info.prev}>Anterior</button>
+            <button className={styles['page-button']} onClick={handleNextPage} disabled={!info.next}>Proxímo</button>
           </div>
         </div>
       </SectionContent>
