@@ -1,0 +1,5 @@
+.section {
+  margin: 20px 0;
+  background-color: var(--semi-black);
+  padding: 10px;
+}

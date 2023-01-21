@@ -14,33 +14,6 @@ body {
   box-sizing: border-box;
 }
 
-section {
-  margin: 20px 0;
-  background-color: var(--semi-black);
-  padding: 10px;
-}
-
-section div {
-  max-width: 60%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.search-input {
-  background-color: var(--total-black);
-  appearance: none;
-  color: var(--orange);
-  border: none;
-  font-size: 2rem;
-  width: 100%;
-  padding: 10px;
-  outline: 1px solid var(--orange);
-}
-
-.search-input::placeholder {
-  color: var(--semi-white);
-}
-
 .caracteres-list {
   padding: 0;
   list-style: none;
