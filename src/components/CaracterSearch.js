@@ -4,7 +4,7 @@ import styles from './CaracterSearch.module.css'
 import Section from './Section'
 import SectionContent from './SectionContent'
 
-const CaracterSearch = ({ fetching, setFetching, setCaracters, setInfo, caracterName, setCaracterName, setErrorMessage }) => {
+const CaracterSearch = ({ fetching, setFetching, setCaracters, setInfo, caracterName, setCaracterName, setErrorMessage, setCaracter }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -20,6 +20,7 @@ const CaracterSearch = ({ fetching, setFetching, setCaracters, setInfo, caracter
       const caractersCopy = [...reponse.data.results]
       const infoCopy = {...reponse.data.info}
 
+      setCaracter(null)
       setCaracters(caractersCopy)
       setInfo(infoCopy)
     } catch (error) {

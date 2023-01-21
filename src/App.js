@@ -29,6 +29,7 @@ const App = () => {
         setFetching={setFetching}
         setCaracters={setCaracters}
         setInfo={setInfo}
+        setCaracter={setCaracter}
         caracterName={caracterName}
         setCaracterName={setCaracterName}
         setErrorMessage={setErrorMessage}
